@@ -1,0 +1,837 @@
+<!-- livebook:{"persist_outputs":true} -->
+
+# Elixir Basico
+
+## Section
+
+```elixir
+import IEx.Helpers
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+IEx.Helpers
+```
+
+```elixir
+h(String.to_integer())
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+
+                             def to_integer(string)                             
+
+  @spec to_integer(t()) :: integer()
+
+Returns an integer whose text representation is string.
+
+string must be the string representation of an integer. Otherwise, an
+ArgumentError will be raised. If you want to parse a string that may contain an
+ill-formatted integer, use Integer.parse/1.
+
+Inlined by the compiler.
+
+## Examples
+
+    iex> String.to_integer("123")
+    123
+
+Passing a string that does not represent an integer leads to an error:
+
+    String.to_integer("invalid data")
+    ** (ArgumentError) argument error
+
+
+                          def to_integer(string, base)                          
+
+  @spec to_integer(t(), 2..36) :: integer()
+
+Returns an integer whose text representation is string in base base.
+
+Inlined by the compiler.
+
+## Examples
+
+    iex> String.to_integer("3FF", 16)
+    1023
+
+```
+
+```elixir
+i("batman")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+Term
+  "batman"
+Data type
+  BitString
+Byte size
+  6
+Description
+  This is a string: a UTF-8 encoded binary. It's printed surrounded by
+  "double quotes" because all UTF-8 encoded code points in it are printable.
+Raw representation
+  <<98, 97, 116, 109, 97, 110>>
+Reference modules
+  String, :binary
+Implemented protocols
+  Collectable, IEx.Info, Inspect, List.Chars, String.Chars
+```
+
+```elixir
+i("21")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+Term
+  "21"
+Data type
+  BitString
+Byte size
+  2
+Description
+  This is a string: a UTF-8 encoded binary. It's printed surrounded by
+  "double quotes" because all UTF-8 encoded code points in it are printable.
+Raw representation
+  <<50, 49>>
+Reference modules
+  String, :binary
+Implemented protocols
+  Collectable, IEx.Info, Inspect, List.Chars, String.Chars
+```
+
+```elixir
+i(35)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+Term
+  35
+Data type
+  Integer
+Reference modules
+  Integer
+Implemented protocols
+  IEx.Info, Inspect, List.Chars, String.Chars
+```
+
+```elixir
+i(fn -> IO.puts("ok") end)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+Term
+  #Function<45.65746770/0 in :erl_eval.expr/5>
+Data type
+  Function
+Type
+  local
+Arity
+  0
+Description
+  This is an anonymous function.
+Implemented protocols
+  Enumerable, IEx.Info, Inspect
+```
+
+## Tipos Basicos
+
+Integer
+
+```elixir
+## Em elixir declaro as vars de forma dinamica##
+
+## A passagem de valor para uma variavel e por valor##
+## Nao por referencia##
+
+number = 27
+second_number = number
+number = 20
+
+second_number
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+27
+```
+
+```elixir
+## Integer e o nome de um modulo
+## "Integer." control + space -> abre as funcoes relacionadas ao modulo
+## repetindo o comando voce visualiza a descricao de cada funcao
+Integer.to_string(20)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"20"
+```
+
+```elixir
+Integer.parse("27.08")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+{27, ".08"}
+```
+
+```elixir
+Integer.parse("27")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+{27, ""}
+```
+
+```elixir
+20 / 2
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+10.0
+```
+
+```elixir
+Float.round(20.3)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+20.0
+```
+
+```elixir
+Float.floor(11.3)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+11.0
+```
+
+```elixir
+Float.ceil(14.3)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+15.0
+```
+
+Representacoes Numericas - Binarios e Hexadecimais
+
+```elixir
+# 0xf = 15 Hexadecimal -> comeca com 0X
+# 0b1111 = 15 Binario
+0xF == 0b1111
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+## String
+
+```elixir
+not_a_string = 'Isto nao uma string'
+
+# i(not_a_string)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+Term
+  'Isto nao uma string'
+Data type
+  List
+Description
+  This is a list of integers that is printed as a sequence of characters
+  delimited by single quotes because all the integers in it represent printable
+  ASCII characters. Conventionally, a list of Unicode code points is known as a
+  charlist and a list of ASCII characters is a subset of it.
+Raw representation
+  [73, 115, 116, 111, 32, 110, 97, 111, 32, 117, 109, 97, 32, 115, 116, 114, 105, 110, 103]
+Reference modules
+  List
+Implemented protocols
+  Collectable, Enumerable, IEx.Info, Inspect, List.Chars, String.Chars
+```
+
+```elixir
+my_string = "Isso sim e uma string"
+# String.valid?(my_string)
+# i(my_string)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+```elixir
+# operador de concatenacao em strings
+"Foo" <> "Bar"
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"FooBar"
+```
+
+```elixir
+ano_atual = 2022
+"Estamos no ano de #{ano_atual}"
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"Estamos no ano de 2022"
+```
+
+```elixir
+String.length("ratao")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+5
+```
+
+```elixir
+String.last("ratao")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"o"
+```
+
+```elixir
+String.contains?("1234225678", "22")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+```elixir
+String.upcase("escada de ratao")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"ESCADA DE RATAO"
+```
+
+```elixir
+String.downcase("RATAO")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"ratao"
+```
+
+## Charlist
+
+```elixir
+# cada char e guardado como um inteiro, ex: 'a' == [97]
+char_list = 'isto e uma charlist'
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+'isto e uma charlist'
+```
+
+```elixir
+'a' == [97]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+```elixir
+String.Chars.to_string('Charlist para String')
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"Charlist para String"
+```
+
+## Bitstrings
+
+```elixir
+# um jeito de representar texto atraves de inteiros
+
+<<97>> == "a"
+
+# <<97>> == 'a' = false, aspas
+```
+
+```elixir
+# caso queira descobrir qual o inteiro no padrao ASCII,
+# que representa determinado caracter/char
+# pode usar o operador de concatenacao <>
+"a" <> <<0>>
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+<<97, 0>>
+```
+
+## Binaries
+
+```elixir
+# :: quando quero gravar em uma quantidade de bits
+## TODO melhorar essa explicacao do ::
+## consultar a doc sobre
+
+## Toda string que utilizarmos vai ser um binary
+
+is_binary(<<97::8>>)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+```elixir
+is_binary("toda string e um binary")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+## Atoms
+
+```elixir
+# Atoms sao constantes, cujo o valor e o seu proprio nome
+# pra criar um atomo, passar : + Nome , que vai ser seu valor
+
+:didico
+is_atom(:didico)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+```elixir
+# sempre que criamos um modulo em nossa aplicacao 
+# o Nome desse module (automaticamente) e um atom tambem
+# ele vai direto pra nossa atom-table, e uma tabela la na BEAM
+# que guarda todas as infos de todos os atoms ja criados nessa aplicacao
+# essa tabela e importante: pq, pq esses atoms criados nao sao garbage collected
+# ele nao sao limpos da nossa memoria 
+
+defmodule MyModuleFoobar do
+end
+
+is_atom(MyModuleFoobar)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+```elixir
+# procurando um atom em nossa tabela de atoms la na BEAM
+String.to_existing_atom("didico")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+:didico
+```
+
+```elixir
+# caso nao encontre o atom em nossa tabela de atoms la na BEAM
+String.to_existing_atom("batman")
+# Estoura um error
+```
+
+## Boleanos
+
+```elixir
+true == true
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+```elixir
+true == false
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+false
+```
+
+```elixir
+# Em elixir qualquer valor falso ou nulo E falso!
+
+if nil, do: :ok, else: :not_ok
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+:not_ok
+```
+
+```elixir
+if "1", do: :ok, else: :not_ok
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+:ok
+```
+
+```elixir
+# eles sao equivalentes a atoms em nossa atom table, :true & :false
+true == true
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+```elixir
+false == false
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+## Listas
+
+```elixir
+# uma lista => Colecao de outras variaveis, sao criadas como lista encadeadas
+# em cada pedaco de memoria que existe um elemento de uma lista, tbm vai existir
+# a info de endereco do proximo elemento dessa mesma lista
+listinha = [1, 2, 3, 4, 5, 6]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+[1, 2, 3, 4, 5, 6]
+```
+
+```elixir
+# unir uma lista a outra de maneira mais "Barata" usando o operador ++
+listinha ++ [12, 15, 21, 89]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+[1, 2, 3, 4, 5, 6, 12, 15, 21, 89]
+```
+
+```elixir
+# Subtração de listas
+# Esteja atento para valores duplicados. Para cada elemento na direita, 
+# a primeira ocorrência deste é removida da esquerda:
+
+# listinha = [1,2,3,4,5,6]
+listinha -- [15, 21, 35, 48, 1, 2, 3]
+
+# as vezes o retorno desta operacao e uma charlist
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+[4, 5, 6]
+```
+
+```elixir
+# fn head ou hd, interessante que me retorna apenas o 1 elemento diferente do tail, que retorna a lista
+hd(listinha)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+1
+```
+
+```elixir
+tl(listinha)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+[2, 3, 4, 5, 6]
+```
+
+```elixir
+# utilizando um conceito de pattern matching
+# semelhante a isso em JS -> const [first,remaining] = [1,2,3,4,5]
+[first | remaining] = listinha
+
+# first => 1
+# remaining => [2, 3, 4, 5, 6]
+remaining
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+[2, 3, 4, 5, 6]
+```
+
+```elixir
+[1 | [2 | [3 | []]]] === [1, 2, 3]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+```elixir
+["a" | ["b", "c", "d"]] == ["a", "b", "c", "d"]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+Modulo List, muito interessante
+
+```elixir
+foobar = [1, 2, 3, 4, 5, 6, 7]
+
+# Lindo!
+List.flatten([1, 2, 3, [4, 5], 7, 8, [9, [10, 11, 12]]])
+
+List.last(foobar) |> IO.inspect()
+
+List.first(foobar) |> IO.inspect()
+
+List.delete(foobar, 7) |> IO.inspect()
+
+List.to_tuple(foobar) |> IO.inspect()
+
+List.to_tuple([:error, :not_found]) |> IO.inspect()
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+7
+1
+[1, 2, 3, 4, 5, 6]
+{1, 2, 3, 4, 5, 6, 7}
+{:error, :not_found}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+{:error, :not_found}
+```
+
+## Tuples ou Tuplas
+
+Em Elixir usamos tuplas geralmente como resultados de funcoes
+
+Obs:p/ add um novo elemento em uma tupla E mais custoso,
+
+A tupla ocupa um espaco controlado/contido em memoria, !== de listas
+
+```elixir
+# em Elixir temos o conceito de first class function 
+# E qnd fn's sao tratadas como qualquer outra variavel
+
+buscar_nome_em_uma_tupla = fn nome ->
+  if nome in ["Meliodas", "Naruto", "Sasuke", "Midoria"],
+    do: {:ok, nome},
+    else: {:erro, nome, :not_found}
+end
+
+# buscar_nome_em_uma_tupla.("Meliodas") -> retorna ok
+# buscar_nome_em_uma_tupla.("meliodas") -> retorna error
+buscar_nome_em_uma_tupla.("meliodas")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+{:erro, "meliodas", :not_found}
+```
+
+```elixir
+Tuple.to_list({1, 7, 9})
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+[1, 7, 9]
+```
+
+```elixir
+# add elemento ao final da tupla
+Tuple.append({"Naruto", "Sasuke", "Sakura"}, "Kakashi")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+{"Naruto", "Sasuke", "Sakura", "Kakashi"}
+```
+
+## Keyword Lists
+
+Sao listas com associacao entre chaves e valores
+
+Onde as chaves sao sempre atoms, nao podem ser de nenhum outro tipo
+
+```elixir
+kl = [name: "John", lastname: "McClane"]
+
+# [name: "John", lastname: "McClane"] == []   --> false
+
+# Pode ter chave duplicadas, porem valores diferentes
+[name: "John", lastname: "McClane", lastname: "Foobar"]
+
+# Uma outra forma/notacao de declarar keyword lists, usando tuplas e atoms
+# [{:name, "John"}, {:lastname, "McClane"}] == [name: "John", lastname: "McClane"] --> true
+
+# Sim , a ordem importa quando for comparar uma keyworld list com outra semelhante
+# [name: "Jao", lastname: "Wick"] == [lastname: "Wick", name: "Jao" ]  --> false
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+false
+```
+
+## Maps
+
+Sao mais utilizadas quando precisa criar um dicionario/chave-valor, e mais preferivel utilizar um Map do que
+uma KeyworldList
+
+"Mapas", nao podem ter chaves duplicas, por que a seguinte chave vai dar um replace na chave anterior
+& Maps podem ter chaves de qualquer tipo
+
+```elixir
+# como escrever um mapa em Elixir
+# % + {chave => valor}
+# %{"fallen" => "awp"}
+# is_map(%{"james" => 007})   ----> true
+%{1 => 99}
+
+# IO.inspect(%{:a => 5} == %{a: 5})
+
+# %{1 => 5}
+
+# warning: key "name" will be overridden in map
+# %{"name" => "Michael", "name" => "Mikael"}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%{1 => 99}
+```
+
+```elixir
+# Map functions
+my_map = Map.new(a: 5, b: 10)
+
+my_map = Map.put(my_map, :c, 15)
+
+value = Map.get(my_map, :a)
+value == my_map[:a]
+value == my_map.a
+
+Map.has_key?(my_map, :d)
+
+Map.drop(my_map, [:a, :c])
+
+Map.update(my_map, :a, 1, fn value -> value * 2 end)
+
+Map.take(my_map, [:a, :b])
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%{a: 5, b: 10}
+```
