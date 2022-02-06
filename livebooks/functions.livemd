@@ -7,11 +7,11 @@ import IEx.Helpers
 ```
 
 ```elixir
-fallen = fn a, b, c -> [a * 2, b * 2, c * 2] end
+foobar = fn a, b, c -> [a * 2, b * 2, c * 2] end
 ```
 
 ```elixir
-fallen.(2, 3, 4)
+foobar.(2, 3, 4)
 ```
 
 ```elixir
