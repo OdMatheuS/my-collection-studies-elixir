@@ -1,0 +1,38 @@
+# Cap. 4
+
+## Fn
+
+```elixir
+import IEx.Helpers
+```
+
+```elixir
+fallen = fn a, b, c -> [a * 2, b * 2, c * 2] end
+```
+
+```elixir
+fallen.(2, 3, 4)
+```
+
+```elixir
+defmodule FooMathBar do
+  @spec soma(number, number) :: number
+  defp soma(a, b), do: a + b
+
+  @spec quad(number) :: number
+  defp quad(x), do: x ** 2
+
+  @spec quad_soma(number, number) :: number
+  def quad_soma(x, y), do: quad(soma(x, y))
+end
+
+FooMathBar.quad_soma(2, 3)
+
+soma = fn a, b -> a + b end
+
+quad = fn a -> a ** 2 end
+
+quad_soma = fn a, b -> quad.(soma.(a, b)) end
+
+quad_soma.(2, 3)
+```

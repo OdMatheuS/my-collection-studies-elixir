@@ -267,21 +267,7 @@ not_a_string = 'Isto nao uma string'
 <!-- livebook:{"output":true} -->
 
 ```
-Term
-  'Isto nao uma string'
-Data type
-  List
-Description
-  This is a list of integers that is printed as a sequence of characters
-  delimited by single quotes because all the integers in it represent printable
-  ASCII characters. Conventionally, a list of Unicode code points is known as a
-  charlist and a list of ASCII characters is a subset of it.
-Raw representation
-  [73, 115, 116, 111, 32, 110, 97, 111, 32, 117, 109, 97, 32, 115, 116, 114, 105, 110, 103]
-Reference modules
-  List
-Implemented protocols
-  Collectable, Enumerable, IEx.Info, Inspect, List.Chars, String.Chars
+'Isto nao uma string'
 ```
 
 ```elixir
@@ -293,7 +279,7 @@ my_string = "Isso sim e uma string"
 <!-- livebook:{"output":true} -->
 
 ```
-true
+"Isso sim e uma string"
 ```
 
 ```elixir
@@ -409,6 +395,12 @@ String.Chars.to_string('Charlist para String')
 <<97>> == "a"
 
 # <<97>> == 'a' = false, aspas
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ```elixir
@@ -779,16 +771,19 @@ kl = [name: "John", lastname: "McClane"]
 <!-- livebook:{"output":true} -->
 
 ```
-false
+[name: "John", lastname: "McClane", lastname: "Foobar"]
 ```
 
 ## Maps
 
-Sao mais utilizadas quando precisa criar um dicionario/chave-valor, e mais preferivel utilizar um Map do que
+Sao mais utilizados quando precisa criar um dicionario/chave-valor, e mais preferivel utilizar um Map do que
 uma KeyworldList
 
 "Mapas", nao podem ter chaves duplicas, por que a seguinte chave vai dar um replace na chave anterior
-& Maps podem ter chaves de qualquer tipo
+
+&
+
+Maps podem ter chaves de qualquer tipo
 
 ```elixir
 # como escrever um mapa em Elixir
@@ -818,20 +813,112 @@ my_map = Map.new(a: 5, b: 10)
 my_map = Map.put(my_map, :c, 15)
 
 value = Map.get(my_map, :a)
-value == my_map[:a]
-value == my_map.a
+# value == my_map[:a]
+# value == my_map.a
 
-Map.has_key?(my_map, :d)
+# Map.has_key?(my_map, :d)
 
-Map.drop(my_map, [:a, :c])
+# Map.drop(my_map, [:a, :c])
 
-Map.update(my_map, :a, 1, fn value -> value * 2 end)
+# Map.update(my_map, :a, 1, fn value -> value * 2 end)
 
-Map.take(my_map, [:a, :b])
+# Map.take(my_map, [:a, :b])
 ```
 
 <!-- livebook:{"output":true} -->
 
 ```
-%{a: 5, b: 10}
+5
+```
+
+## Operadores
+
+```elixir
+# Obs:em Elixir se passarmos qualquer valor que nao seja um inteiro,o resultado sera um float
+
+2.25 - 1
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+1.25
+```
+
+```elixir
+# Passando o operador "/" vai sempre me retornar um float
+20 / 2
+
+# Caso queira retornar um inteiro, interessante usar a funcao "div()"
+div(20, 2)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+10
+```
+
+```elixir
+# funcao rem() / remainder, retorna o resto da divisao
+rem(20, 2)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+0
+```
+
+```elixir
+# Em Elixir todos os dados sao comparaveis entre si, 
+# e possuem ordem de grandeza
+# number < atom < reference < function < port < pid < tuple < map < list < bitstring
+<<0>> > []
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
+```elixir
+# Em Elixir string vazia "" nao e null ou nil
+20 && ""
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+""
+```
+
+## Pattern matching - Correspondencia de padroes
+
+Sobre Imutabilidade: Elixir nao tem imutabilidade "estrita"
+
+* Ex: nao poder utilizar o mesmo nome de variavel e atribuir com outro valor
+* ele entended que e apenas um nome de uma variavel, entao Elixir vai simplemente apontar para
+* o nome dessa variavel para outro local da nossa memoria,
+* entao a imutabilidade vai continuar sendo respeitada,
+* pq na verdade nao esta mudando este local da memoria que esta contido esse meu valor (my_int = 10)
+
+```elixir
+my_int = 10
+my_int = 15
+
+# Caso queira uma comparacao um pouco mais estrita
+# pode utilizar o pin operator ^ 
+
+# ** (MatchError) no match of right hand side value: 50
+^my_int = 50
+# 15 = 50
+
+# quando utilizo o ^ antes de uma var, 
+# estou trazendo o valor que foi atribuido a esta var p/ comparar
+```
+
+```elixir
+
 ```
