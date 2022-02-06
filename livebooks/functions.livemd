@@ -17,10 +17,10 @@ foobar.(2, 3, 4)
 ```elixir
 defmodule FooMathBar do
   @spec soma(number, number) :: number
-  defp soma(a, b), do: a + b
+  def soma(a, b), do: a + b
 
   @spec quad(number) :: number
-  defp quad(x), do: x ** 2
+  def quad(x), do: x ** 2
 
   @spec quad_soma(number, number) :: number
   def quad_soma(x, y), do: quad(soma(x, y))
@@ -42,4 +42,8 @@ soma = &(&1 + &2)
 quad = &(&1 ** 2)
 quad_soma = &quad.(soma.(&1, &2))
 quad_soma.(2, 3)
+
+# using reduce to sum
+# x = [2,3] 
+# Enum.reduce(x, fn x, acc -> x + acc end) |> FooMathBar.quad()
 ```
