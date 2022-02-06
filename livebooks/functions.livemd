@@ -28,11 +28,18 @@ end
 
 FooMathBar.quad_soma(2, 3)
 
+## anonymous functions.
 soma = fn a, b -> a + b end
 
 quad = fn a -> a ** 2 end
 
 quad_soma = fn a, b -> quad.(soma.(a, b)) end
 
+quad_soma.(2, 3)
+
+## In Elixir anonymous functions is so common they created a shortcut for it.
+soma = &(&1 + &2)
+quad = &(&1 ** 2)
+quad_soma = &quad.(soma.(&1, &2))
 quad_soma.(2, 3)
 ```
