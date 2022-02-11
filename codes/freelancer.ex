@@ -15,10 +15,9 @@ defmodule FreelancerRates do
   end
 
   def monthly_rate(hourly_rate, discount) do
-    total_rate =
-      daily_rate(hourly_rate * @monthly_billable_days)
+      total_rate = daily_rate(hourly_rate * @monthly_billable_days)
       |> apply_discount(discount)
-      |> Float.ceil()
+      |> Kernel.ceil()
       |> trunc()
   end
 
