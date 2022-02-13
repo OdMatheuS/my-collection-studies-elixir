@@ -15,11 +15,12 @@ defmodule LogLevel do
   end
 
   def alert_recipient(level, legacy?) do
+    return_label = to_label(level, legacy?)
+
     cond do
-      (level < 1 or level >= 5) and legacy? == true -> :dev1
-      level == 4 or level == 5 -> :ops
-      level > 5 -> :dev2
-      level <= 1 -> nil
+      return_label == :unknown and legacy? -> :dev1
+      return_label == :error or return_label == :fatal -> :ops
+      return_label == :unknown -> :dev2
       true -> nil
     end
   end
