@@ -6,9 +6,7 @@ defmodule Darts do
   """
   @spec score(position :: position) :: integer
   def score({x, y}) do
-    total_value_square = {x * x, y * y}
-      |> IO.inspect()
-      |> Tuple.sum()
+    total_value_square = {x * x, y * y} |> Tuple.sum()
 
     cond do
       total_value_square > 100 -> 0
