@@ -1,3 +1,5 @@
+#credits: an exercise seen in the book "Learn Functional Programming with Elixir" - Ulisses Almeida (Author)
+
 defmodule TaskList do
   import File, only: [write: 3, read: 1]
 
