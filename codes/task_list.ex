@@ -1,4 +1,6 @@
 defmodule TaskList do
+  import File, only: [write: 3, read: 1]
+
   @moduledoc """
   Create a task list, read and write a file
   """
@@ -6,8 +8,8 @@ defmodule TaskList do
 
   def add(task_name) do
     task = "[ ]" <> task_name <> "\n"
-    File.write(@file_name, task, [:append])
+    write(@file_name, task, [:append])
   end
 
-  def show_list, do: File.read(@file_name)
+  def show_list, do: read(@file_name)
 end
