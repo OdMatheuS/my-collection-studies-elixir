@@ -12,3 +12,5 @@
 # using Tuples for pattern matching
 my_heros = fn -> {:hero, "All Might"} end
 {:hero, number_one} = my_heros.()
+
+IO.puts number_one # -> All Might
