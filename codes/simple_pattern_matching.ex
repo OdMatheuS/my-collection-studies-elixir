@@ -8,3 +8,7 @@
 "Kamado" <> name_best_brother = "Kamado Tanjiro"
 
 "Water:" <> name_hashira_of_water = "Water:Giyu Tomioka"
+
+# using Tuples for pattern matching
+my_heros = fn -> {:hero, "All Might"} end
+{:hero, number_one} = my_heros.()
