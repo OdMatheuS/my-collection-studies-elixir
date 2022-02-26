@@ -15,12 +15,9 @@ IEx.Helpers
 ```
 
 ```elixir
-# Sarah
-slices_of_bread = 10
-cost_each_slice = 0.10
-bottles_milk = 3
-cost_each_bottles = 2
-cake = 15
+# Sarah items
+
+[slices_of_bread, cost_each_slice, bottles_milk, cost_each_bottles, cake] = [10, 0.10, 3, 2, 15]
 
 calc_total_expense_each_unit = &(&1 * &2)
 
