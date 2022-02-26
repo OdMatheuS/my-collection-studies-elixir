@@ -5,10 +5,26 @@
 ## Section 1. chap 2
 
 ```elixir
+import IEx.Helpers
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+IEx.Helpers
+```
+
+```elixir
 # Sarah
 slices_of_bread = 10
 cost_each_slice = 0.10
 bottles_milk = 3
 cost_each_bottles = 2
 cake = 15
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+15
 ```
