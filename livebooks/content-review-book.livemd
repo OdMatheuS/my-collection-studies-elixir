@@ -40,10 +40,24 @@ total_expend = Enum.sum(all_items_purchased)
 # Bob traveled
 travelled_distance = 200
 hours_travelled = 4
+
+all_infos_about_trip = fn distance, hours ->
+  IO.puts("travel distance: #{distance}km, 
+     time: #{hours}h, 
+     average speed #{div(distance, hours)}km/h")
+end
+
+all_infos_about_trip.(travelled_distance, hours_travelled)
 ```
 
 <!-- livebook:{"output":true} -->
 
 ```
-4
+travel distance: 200km, time: 4h, average speed 50km/h
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+:ok
 ```
