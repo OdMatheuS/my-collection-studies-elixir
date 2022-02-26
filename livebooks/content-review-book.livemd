@@ -66,18 +66,24 @@ travel distance: 200km, time: 4h, average speed 50km/h
 # Applies a Tax
 tax = 0.12
 
-apply_tax = fn price ->
-  new_price = (price * tax) + price
-  IO.puts("Price: #{new_price} - Tax: #{price * tax}")
+all_prices = [12.5, 30.99, 250.49, 18.80]
+
+apply_tax = fn prices ->
+  Enum.each(prices, fn x_price ->
+    IO.puts("Price: #{x_price * tax + x_price} - Tax: #{x_price * tax}")
+  end)
 end
 
-apply_tax.(12.5)
+apply_tax.(all_prices)
 ```
 
 <!-- livebook:{"output":true} -->
 
 ```
 Price: 14.0 - Tax: 1.5
+Price: 34.7088 - Tax: 3.7188
+Price: 280.5488 - Tax: 30.0588
+Price: 21.056 - Tax: 2.256
 ```
 
 <!-- livebook:{"output":true} -->
