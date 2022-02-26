@@ -1,0 +1,14 @@
+<!-- livebook:{"persist_outputs":true} -->
+
+# Content review of book: Learn Functional Programming with Elixir
+
+## Section 1. chap 2
+
+```elixir
+# Sarah
+slices_of_bread = 10
+cost_each_slice = 0.10
+bottles_milk = 3
+cost_each_bottles = 2
+cake = 15
+```
