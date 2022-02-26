@@ -61,3 +61,27 @@ travel distance: 200km, time: 4h, average speed 50km/h
 ```
 :ok
 ```
+
+```elixir
+# Applies a Tax
+tax = 0.12
+
+apply_tax = fn price ->
+  new_price = price + price * tax
+  IO.puts("Price: #{new_price} - Tax: #{price * tax}")
+end
+
+apply_tax.(12.5)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+Price: 14.0 - Tax: 1.5
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+:ok
+```
