@@ -21,10 +21,16 @@ cost_each_slice = 0.10
 bottles_milk = 3
 cost_each_bottles = 2
 cake = 15
+
+calc_total_expense_each_unit = &(&1 * &2)
+
+total_cost_bread = calc_total_expense_each_unit.(slices_of_bread, cost_each_slice)
+
+total_cost_milk = calc_total_expense_each_unit.(cost_each_bottles, bottles_milk)
 ```
 
 <!-- livebook:{"output":true} -->
 
 ```
-15
+1.0
 ```
