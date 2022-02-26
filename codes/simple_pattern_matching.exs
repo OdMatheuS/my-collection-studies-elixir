@@ -14,3 +14,13 @@ my_heros = fn -> {:hero, "All Might"} end
 {:hero, number_one} = my_heros.()
 
 IO.puts number_one # -> All Might
+
+# Matching with Lists
+[inosuke,inosuke,inosuke] = ["Hashibira","Hashibira","Hashibira"]
+
+# Match Error ,
+# variable inosuke can't be the value "Agatsuma" (last name of zenitshu) and "Hashibira"(last name of Inosuke) at the same time
+[inosuke,inosuke,inosuke] = ["Hashibira","Agatsuma","Hashibira"]
+
+# no erros, matching ok!
+[inosuke,zenitsu,inosuke] = ["Hashibira","Agatsuma","Hashibira"]
