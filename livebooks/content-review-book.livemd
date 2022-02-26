@@ -67,7 +67,7 @@ travel distance: 200km, time: 4h, average speed 50km/h
 tax = 0.12
 
 apply_tax = fn price ->
-  new_price = price + price * tax
+  new_price = price * tax + price
   IO.puts("Price: #{new_price} - Tax: #{price * tax}")
 end
 
