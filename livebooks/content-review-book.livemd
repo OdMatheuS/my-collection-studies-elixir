@@ -91,3 +91,17 @@ Price: 21.056 - Tax: 2.256
 ```
 :ok
 ```
+
+```elixir
+defmodule MatchstickFactory do
+  def boxes(_foobar), do: "Something todo"
+end
+
+MatchstickFactory.boxes(0)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"Something todo"
+```
