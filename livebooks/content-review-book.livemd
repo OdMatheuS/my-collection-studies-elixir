@@ -35,3 +35,15 @@ total_expend = Enum.sum(all_items_purchased)
 ```
 22.0
 ```
+
+```elixir
+# Bob traveled
+travelled_distance = 200
+hours_travelled = 4
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+4
+```
