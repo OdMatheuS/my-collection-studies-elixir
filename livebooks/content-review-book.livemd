@@ -108,23 +108,21 @@ defmodule MatchstickFactory do
     medium = rem(match_sticks, @l_box_hold) |> div(@m_box_hold)
     small = rem(match_sticks, @m_box_hold) |> div(@s_box_hold)
     remaining_matchsticks = rem(match_sticks, @s_box_hold)
-    IO.puts("big:#{big},
-       med:#{medium},sm:#{small}, 
-       remainig matchsticks:#{remaining_matchsticks}")
+
+    %{
+      big: big,
+      medium: medium,
+      small: small,
+      remaining_matchsticks: remaining_matchsticks
+    }
   end
 end
 
-MatchstickFactory.boxes(98)
+MatchstickFactory.boxes(39)
 ```
 
 <!-- livebook:{"output":true} -->
 
 ```
-big:1,med:2,sm:3, remainig matchsticks:3
-```
-
-<!-- livebook:{"output":true} -->
-
-```
-:ok
+%{big: 0, medium: 1, remaining_matchsticks: 4, small: 3}
 ```
