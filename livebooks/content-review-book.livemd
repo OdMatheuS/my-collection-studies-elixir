@@ -93,15 +93,38 @@ Price: 21.056 - Tax: 2.256
 ```
 
 ```elixir
+# Boxes
+# 1:Big hold 50 match sticks
+# 2:Medium hold 20 match sticks
+# 3:Small hol 5 match sticks
+
 defmodule MatchstickFactory do
-  def boxes(_foobar), do: "Something todo"
+  @l_box_hold 50
+  @m_box_hold 20
+  @s_box_hold 5
+
+  def boxes(match_sticks) do
+    big = div(match_sticks, @l_box_hold)
+    medium = rem(match_sticks, @l_box_hold) |> div(@m_box_hold)
+    small = rem(match_sticks, @m_box_hold) |> div(@s_box_hold)
+    remaining_matchsticks = rem(match_sticks, @s_box_hold)
+    IO.puts("big:#{big},
+       med:#{medium},sm:#{small}, 
+       remainig matchsticks:#{remaining_matchsticks}")
+  end
 end
 
-MatchstickFactory.boxes(0)
+MatchstickFactory.boxes(98)
 ```
 
 <!-- livebook:{"output":true} -->
 
 ```
-"Something todo"
+big:1,med:2,sm:3, remainig matchsticks:3
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+:ok
 ```
