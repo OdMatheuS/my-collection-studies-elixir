@@ -10,4 +10,8 @@ defmodule LanguageList do
   def remove(list) do
     tl(list)
   end
+
+  def first(list) do
+    hd(list)
+  end
 end
