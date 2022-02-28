@@ -14,4 +14,8 @@ defmodule LanguageList do
   def first(list) do
     hd(list)
   end
+
+  def count(list) do
+    length(list)
+  end
 end
