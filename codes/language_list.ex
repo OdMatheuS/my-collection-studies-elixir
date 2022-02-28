@@ -9,7 +9,5 @@ defmodule LanguageList do
 
   def count(list), do: length(list)
 
-  def exciting_list?(list) do
-    "Elixir" in list
-  end
+  def exciting_list?(list), do: "Elixir" in list
 end
