@@ -1,9 +1,7 @@
 defmodule LanguageList do
   def new(), do: []
 
-  def add(list, language) do
-    [language | list]
-  end
+  def add(list, language), do: [language | list]
 
   def remove(list) do
     tl(list)
