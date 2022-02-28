@@ -5,9 +5,7 @@ defmodule LanguageList do
 
   def remove(list), do: tl(list)
 
-  def first(list) do
-    hd(list)
-  end
+  def first(list), do: hd(list)
 
   def count(list) do
     length(list)
