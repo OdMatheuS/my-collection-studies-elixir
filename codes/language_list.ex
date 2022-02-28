@@ -7,4 +7,7 @@ defmodule LanguageList do
     [language | list]
   end
 
+  def remove(list) do
+    tl(list)
+  end
 end
