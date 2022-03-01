@@ -14,6 +14,7 @@ defmodule Year do
       rem(year,400) == 0 -> true
       rem(year, 4) == 0 -> true
       rem(year, 100) == 0 -> false
+      true -> false
     end
   end
 end
