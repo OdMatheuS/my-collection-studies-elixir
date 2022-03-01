@@ -12,6 +12,7 @@ defmodule Year do
   def leap_year?(year) do
     cond do
       rem(year,400) == 0 -> true
+      rem(year, 4) == 0 -> true
     end
   end
 end
