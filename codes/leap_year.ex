@@ -13,6 +13,7 @@ defmodule Year do
     cond do
       rem(year,400) == 0 -> true
       rem(year, 4) == 0 -> true
+      rem(year, 100) == 0 -> false
     end
   end
 end
