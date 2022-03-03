@@ -15,7 +15,7 @@ defmodule FreelancerRates do
     |> ceil()
   end
 
-  defp daily_discounted_rate(hourly_rate, discount \\ 0) do
+  defp daily_discounted_rate(hourly_rate, discount) do
     hourly_rate
     |> daily_rate()
     |> apply_discount(discount)
