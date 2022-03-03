@@ -1,4 +1,7 @@
 defmodule Lasagna do
+  @moduledoc """
+  In this module, all related to the time spent cooking the lasagna
+  """
   @spec expected_minutes_in_oven() :: integer
   def expected_minutes_in_oven() do
     40
