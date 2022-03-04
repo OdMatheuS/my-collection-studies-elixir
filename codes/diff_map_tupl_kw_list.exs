@@ -30,8 +30,17 @@ get_elem(tuple, 1) # return :pig
 
 
 # ---------------------------------------------------
+# source: https://elixirschool.com/en/lessons/basics/collections#keyword-lists-5
 # Keyword lists -------------------------------------
 [tanjiro: "Kamado", zenitsu: "Agatsuma"]
 
 # Other style
 [{:tanjiro, "Kamado"}, {:zenitsu, "Agatsuma"}]
+
+# The three characteristics of keyword lists highlight their importance:
+
+    #Keys are atoms.
+    #Keys are ordered.
+    #Keys do not have to be unique.
+
+#For these reasons, keyword lists are most commonly used to pass options to functions.
