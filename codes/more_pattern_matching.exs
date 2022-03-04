@@ -9,3 +9,6 @@ heros_infos = [
 ]
 
 [first_hero, second_hero, third_hero | others_heros] = heros_infos
+# In this code, we select the first 3 heroes and their respective information,
+# giving the possibility of being able to select only the first or any other position,
+# with a much more declarative approach
