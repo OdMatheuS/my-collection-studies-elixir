@@ -19,3 +19,11 @@ katsuki_bakugo = %{"age" => 17}
   {:hero, "All Might"} => "Tuple",
   %{only_key: true} => "HI! Map",
 }
+
+# ---------------------------------------------------
+# Tuple ---------------------------------------------
+tuple = {:inosuke, :pig, 7, "Assault"}
+get_elem(tuple, 1) # return :pig
+
+# Tuple example with multiple types of data.
+{"Giyu Tomioka", 0101, :abc, false}
