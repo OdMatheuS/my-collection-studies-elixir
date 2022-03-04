@@ -27,3 +27,11 @@ get_elem(tuple, 1) # return :pig
 
 # Tuple example with multiple types of data.
 {"Giyu Tomioka", 0101, :abc, false}
+
+
+# ---------------------------------------------------
+# Keyword lists -------------------------------------
+[tanjiro: "Kamado", zenitsu: "Agatsuma"]
+
+# Other style
+[{:tanjiro, "Kamado"}, {:zenitsu, "Agatsuma"}]
