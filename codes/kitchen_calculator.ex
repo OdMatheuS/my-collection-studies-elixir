@@ -3,7 +3,12 @@ defmodule KitchenCalculator do
     value
   end
 
-  def to_milliliter(volume_pair) do
+  def to_milliliter({:milliliter, num_value}) do
+    {:milliliter, num_value}
+  end
+
+  def to_milliliter({:cup, num_value}) do
+    {:milliliter, num_value * 240}
   end
 
   def from_milliliter(volume_pair, unit) do
