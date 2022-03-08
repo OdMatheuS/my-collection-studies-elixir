@@ -7,6 +7,10 @@ defmodule MultipleClause do
   def get_info_kimetsu(:pig = hunter_nickname) do
     {hunter_nickname, "Inosuke Hashibira"}
   end
+
+  def get_info_kimetsu(:zzz = sleepy_hunter) do
+    {sleepy_hunter, "Zenitsu Agatsuma"}
+  end
 end
 
 MultipleClause.get_info_kimetsu(:tanjiro)
@@ -14,3 +18,6 @@ MultipleClause.get_info_kimetsu(:tanjiro)
 
 MultipleClause.get_info_kimetsu(:pig)
 # return -> {:pig, "Inosuke Hashibira"}
+
+MultipleClause.get_info_kimetsu(:zzz)
+# return -> {:zzz, "Zenitsu Agatsuma"}
