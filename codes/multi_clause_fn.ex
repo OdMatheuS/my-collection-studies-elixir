@@ -11,3 +11,6 @@ end
 
 MultipleClause.get_info_kimetsu(:tanjiro)
 # return -> {:tanjiro, "Tanjiro Kamado"}
+
+MultipleClause.get_info_kimetsu(:pig)
+# return -> {:pig, "Inosuke Hashibira"}
