@@ -16,6 +16,10 @@ defmodule MultipleClause do
 
   def get_info_my_hero("Endeavor"), do: "Current Hero Number 1"
 
+  def get_info_my_hero(value) when not is_binary(value) do
+    "Invalid parameter, needs type string, and currently accepted only as 'All Might' and 'Endeavor' parameters"
+  end
+
   def get_info_my_hero(), do: "currently accepted only as 'All Might' and 'Endeavor' parameters"
 
 end
