@@ -13,8 +13,11 @@ defmodule MultipleClause do
   end
 
   def get_hero("All Might"), do: "Best Hero Number 1"
+
   def get_info_my_hero("Endeavor"), do: "Current Hero Number 1"
+
   def get_info_my_hero(), do: "currently accepted only as 'All Might' and 'Endeavor' parameters"
+
 end
 
 MultipleClause.get_info_kimetsu(:tanjiro)
