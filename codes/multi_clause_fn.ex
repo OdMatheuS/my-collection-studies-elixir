@@ -11,6 +11,8 @@ defmodule MultipleClause do
   def get_info_kimetsu(:zzz = sleepy_hunter) do
     {sleepy_hunter, "Zenitsu Agatsuma"}
   end
+
+  def get_hero("All Might"), do: "Best Hero Number 1"
 end
 
 MultipleClause.get_info_kimetsu(:tanjiro)
