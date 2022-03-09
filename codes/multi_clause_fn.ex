@@ -28,3 +28,13 @@ MultipleClause.get_info_kimetsu(:pig)
 
 MultipleClause.get_info_kimetsu(:zzz)
 # return -> {:zzz, "Zenitsu Agatsuma"}
+
+#------------------------------------#
+
+# My Hero Examples
+
+MultipleClause.get_info_my_hero()
+# return -> "currently accepted only as 'All Might' and 'Endeavor' parameters"
+
+MultipleClause.get_info_my_hero("Endeavor")
+# return -> "Current Hero Number 1"
