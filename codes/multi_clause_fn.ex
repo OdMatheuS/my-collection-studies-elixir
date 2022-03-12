@@ -54,3 +54,12 @@ get_name_of_processor_86 = fn
   "Gunslinger" -> "Kurena Kukumila"
   _ -> "Processor name not found..."
 end
+
+get_name_of_processor_86.("Undertaker")
+# return -> "Shinei Nouzen"
+
+get_name_of_processor_86.("Gunslinger")
+# return -> "Kurena Kukumila"
+
+get_name_of_processor_86.("Foobar")
+# return -> "Processor name not found..."
