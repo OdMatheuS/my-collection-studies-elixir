@@ -45,3 +45,12 @@ MultipleClause.get_info_my_hero("Endeavor")
 
 #-----------------------------------------
 # Anonymous functions can also have multiple clauses
+
+get_name_of_processor_86 = fn
+  "Undertaker" -> "Shinei Nouzen"
+  "Wehrwolf" -> "Raiden Shuga"
+  "Laughing Fox" -> "Theoto Rikka"
+  "Snow Witch" -> "Anju Emma"
+  "Gunslinger" -> "Kurena Kukumila"
+  _ -> "Processor name not found..."
+end
