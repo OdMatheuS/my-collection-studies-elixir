@@ -42,3 +42,6 @@ MultipleClause.get_info_my_hero()
 
 MultipleClause.get_info_my_hero("Endeavor")
 # return -> "Current Hero Number 1"
+
+#-----------------------------------------
+# Anonymous functions can also have multiple clauses
