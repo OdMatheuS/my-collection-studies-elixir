@@ -13,3 +13,6 @@ list_char_code_point = [?t, ?a, ?n, ?j, ?i, ?r, ?o]
 
 # Interpolation + anonymous function + fn type pure
 get_age_tanjiro = fn -> "Tanjiro is #{16} years old" end
+
+# return -> Tanjiro is 16 years old
+# number 16 was passed as a value of type Integer inside a "String"
