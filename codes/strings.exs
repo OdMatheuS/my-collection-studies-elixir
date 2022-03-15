@@ -10,3 +10,6 @@ best_brother = <<116, 97, 110, 106, 105, 114, 111, 32, 107, 97, 109, 97, 100, 11
 
 list_char_code_point = [?t, ?a, ?n, ?j, ?i, ?r, ?o]
 # return -> 'tanjiro'
+
+# Interpolation + anonymous function + fn type pure
+get_age_tanjiro = fn -> "Tanjiro is #{16} years old" end
