@@ -11,6 +11,10 @@ defmodule KitchenCalculator do
     {:milliliter, volume_value * 240}
   end
 
+  def to_milliliter({:fluid_ounce, volume_value}) do
+    {:milliliter, volume_value * 30}
+  end
+
   def from_milliliter(volume_pair, unit) do
   end
 
