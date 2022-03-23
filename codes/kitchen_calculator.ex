@@ -15,6 +15,10 @@ defmodule KitchenCalculator do
     {:milliliter, volume_value * 30}
   end
 
+  def to_milliliter({:teaspoon, volume_value}) do
+    {:milliliter, volume_value * 5}
+  end
+
   def from_milliliter(volume_pair, unit) do
   end
 
