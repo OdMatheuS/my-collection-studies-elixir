@@ -2,6 +2,7 @@ defmodule KitchenCalculator do
   @milliliter 1
   @cup 240
   @fluid_ounce 30
+  @teaspoon 5
   
   def get_volume({_, value}) do
     value
@@ -40,6 +41,11 @@ defmodule KitchenCalculator do
   def from_milliliter({_atom, value}, :fluid_ounce) do
     volume_converted = {value / @fluid_ounce}
     Tuple.insert_at(volume_converted, 0, :fluid_ounce)
+  end
+
+  def from_milliliter({_atom, value}, :teaspoon) do
+    volume_converted = {value / @teaspoon}
+    Tuple.insert_at(volume_converted, 0, :teaspoon)
   end
 
   def convert(volume_pair, unit) do
