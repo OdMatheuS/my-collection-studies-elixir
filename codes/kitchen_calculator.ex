@@ -1,5 +1,6 @@
 defmodule KitchenCalculator do
   @milliliter 1
+  @cup 240
   
   def get_volume({_, value}) do
     value
@@ -28,6 +29,11 @@ defmodule KitchenCalculator do
   def from_milliliter({_atom, value}, :milliliter) do
     volume_converted = {value / @milliliter}
     Tuple.insert_at(volume_converted, 0, :milliliter)
+  end
+
+  def from_milliliter({_atom, value}, :cup) do
+    volume_converted = {value / @cup}
+    Tuple.insert_at(volume_converted, 0, :cup)
   end
 
   def convert(volume_pair, unit) do
