@@ -54,6 +54,13 @@ defmodule KitchenCalculator do
     Tuple.insert_at(volume_converted, 0, :tablespoon)
   end
 
-  def convert(volume_pair, unit) do
+  def convert({atom, volume}, _unit) do
+    case atom do
+      :teaspoon -> {:tablespoon, to_milliliter({atom, volume}) |> elem(1) |> div(@tablespoon)}
+      :cup -> {:fluid_ounce, to_milliliter({atom, volume}) |> elem(1) |> div(@fluid_ounce)}
+      :fluid_ounce -> {:teaspoon, to_milliliter({atom, volume}) |> elem(1) |> div(@teaspoon)}
+      :tablespoon -> {:cup, to_milliliter({atom, volume}) |> elem(1) |> div(@cup)}
+    end
   end
+
 end
