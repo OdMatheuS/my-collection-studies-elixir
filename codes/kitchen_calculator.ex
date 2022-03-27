@@ -14,19 +14,19 @@ defmodule KitchenCalculator do
   end
 
   def to_milliliter({:cup, volume_value}) do
-    {:milliliter, volume_value * 240}
+    {:milliliter, volume_value * @cup}
   end
 
   def to_milliliter({:fluid_ounce, volume_value}) do
-    {:milliliter, volume_value * 30}
+    {:milliliter, volume_value * @fluid_ounce}
   end
 
   def to_milliliter({:teaspoon, volume_value}) do
-    {:milliliter, volume_value * 5}
+    {:milliliter, volume_value * @teaspoon}
   end
 
   def to_milliliter({:tablespoon, volume_value}) do
-    {:milliliter, volume_value * 15}
+    {:milliliter, volume_value * @tablespoon}
   end
 
   def from_milliliter({_atom, value}, :milliliter) do
