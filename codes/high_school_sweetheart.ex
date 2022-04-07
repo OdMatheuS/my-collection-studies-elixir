@@ -5,4 +5,7 @@ defmodule HighSchoolSweetheart do
     |> String.first()
   end
 
+  def initial(name) do
+    first_letter(name) <> "." |> String.capitalize()
+  end
 end
