@@ -1,0 +1,2 @@
+defmodule HighScore do
+end
