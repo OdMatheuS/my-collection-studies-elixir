@@ -10,4 +10,8 @@ defmodule HighScore do
     Map.put(scores, name, score)
   end
 
+  def remove_player(scores, name) do
+    Map.delete(scores, name)
+  end
+
 end
