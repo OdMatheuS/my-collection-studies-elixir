@@ -14,4 +14,8 @@ defmodule HighScore do
     Map.delete(scores, name)
   end
 
+  def reset_score(scores, name) do
+    Map.put(scores, name, @default_score)
+  end
+
 end
