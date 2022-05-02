@@ -12,7 +12,8 @@ defmodule RPG.CharacterSheet do
   end
 
   def ask_level() do
-    
+    IO.gets("What is your character's level?\n")
+    |> String.trim()
   end
 
 end
