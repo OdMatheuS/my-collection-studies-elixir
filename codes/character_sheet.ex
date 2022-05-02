@@ -11,4 +11,8 @@ defmodule RPG.CharacterSheet do
     |> String.trim()
   end
 
+  def ask_level() do
+    
+  end
+
 end
