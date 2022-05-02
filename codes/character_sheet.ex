@@ -17,4 +17,8 @@ defmodule RPG.CharacterSheet do
     |> String.to_integer()
   end
 
+  def run() do
+    
+  end
+
 end
