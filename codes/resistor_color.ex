@@ -17,6 +17,6 @@ defmodule ResistorColor do
   @spec code(atom) :: integer()
   def code(color) do
     @colors
-    |> Enum.find_index(fn color_atom -> color_atom == color end)
+    |> Enum.find_index(&(&1 == color))
   end
 end
