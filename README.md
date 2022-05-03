@@ -8,7 +8,7 @@ At this moment I will add content using livebook, which is very practical and ve
 
 In case you don't know the livebook, in the references I added the official repo, all very detailed to install.
 
-Let's spread more functional programming to the world :)
+Let's spread functional programming to the world :)
 
 ## References
 
