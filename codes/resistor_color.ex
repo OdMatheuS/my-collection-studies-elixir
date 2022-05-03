@@ -1,0 +1,2 @@
+defmodule ResistorColor do
+end
