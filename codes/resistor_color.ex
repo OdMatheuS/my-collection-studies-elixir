@@ -1,16 +1,16 @@
 defmodule ResistorColor do
-@colors [
-  :black,
-  :brown,
-  :red,
-  :orange,
-  :yellow,
-  :green,
-  :blue,
-  :violet,
-  :grey,
-  :white
-]
+  @colors [
+    :black,
+    :brown,
+    :red,
+    :orange,
+    :yellow,
+    :green,
+    :blue,
+    :violet,
+    :grey,
+    :white
+  ]
   @doc """
   Return the value of a color band
   """
